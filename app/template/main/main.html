@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ホーム | WEBプログラマ・マッチングアプリ</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="../static/img/rogo.png" alt="ロゴ" />
+    </header>
+
+    <div class="container-fluid mt-4">
+      <div class="row">
+        <!-- ▼ メインカラム -->
+        <div class="col-lg-9">
+          <!-- ▼ フィルター検索フォーム（中央揃えに修正） -->
+          <form
+            class="filter-form d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4"
+            method="GET"
+            action="/search"
+          >
+            <select name="language" class="form-select w-auto">
+              <option value="">使用言語を選択</option>
+              <option value="python">Python</option>
+              <option value="java">Java</option>
+              <option value="PHP">PHP</option>
+              <option value="ruby">Ruby</option>
+              <option value="csharp">C#</option>
+            </select>
+
+            <select name="dev_field" class="form-select w-auto">
+              <option value="">開発分野を選択</option>
+              <option value="web">Web開発</option>
+              <option value="mobile">モバイルアプリ</option>
+              <option value="ai">AI / 機械学習</option>
+              <option value="game">ゲーム開発</option>
+              <option value="embedded">組み込みシステム</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary">表示</button>
+          </form>
+
+          <!-- ▼ プロフィールカード一覧 -->
+          <div
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4"
+          >
+            {% for user in recommended %} {% include 'user_cardbs.html' %} {%
+            endfor %}
+          </div>
+        </div>
+
+        <!-- ▼ サイドバー -->
+        <div class="col-lg-3 sidebar mt-4 mt-lg-0">
+          <a href="/myprofile">マイページ</a>
+          <a href="/logout">ログアウト</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>&copy; 2025 CodeMate. All rights reserved.</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
