@@ -41,6 +41,11 @@ footer {
   }
 }
 
+/* ▼ 共通ユーティリティクラス */
+.is-hidden {
+  display: none;
+}
+
 /* ==============================
    ▼ top.html 用CSS
    ============================== */
@@ -338,7 +343,7 @@ footer {
 }
 
 /*
- 
+
 .close-bottom button {
   border: none;
   background: none;
