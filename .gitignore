@@ -22,7 +22,6 @@ Pipfile.lock
 poetry.lock
 
 # Flask/Middleware キャッシュやセッション
-instance/
 *.bak
 *.swp
 *.tmp
