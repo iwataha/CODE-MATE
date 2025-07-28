@@ -45,14 +45,22 @@ def create_app():
             .filter(Likes.from_user == current_user.id, Likes.matched == True)
             .subquery()
         )
-        # おすすめユーザーを取得（マッチ済み除外）
+        # いいねしたユーザーの一覧を取得（from_userが current_user.id）
+        liked_users_subquery = (
+        db.session.query(Likes.to_user)
+        .filter(Likes.from_user == current_user.id)
+        .subquery()
+)
+
+        # おすすめユーザーを取得（マッチ済み、いいね済み除外）
         recommended = (
             User.query
                 .filter(
                     User.language == current_user.language,
                     User.dev_field == current_user.dev_field,
                     User.id != current_user.id,
-                    ~User.id.in_(matched_users_subquery) 
+                    ~User.id.in_(matched_users_subquery),
+                    ~User.id.in_(liked_users_subquery) 
                 )
             .limit(6)
             .all()
