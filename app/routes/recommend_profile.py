@@ -9,4 +9,4 @@ recommend_profile_bp = Blueprint("recommend_profile", __name__)
 @recommend_profile_bp.route("/user/<int:user_id>")
 def recommend_profile(user_id):
     user = User.query.get_or_404(user_id)
-    return render_template("user_register.html", user=user)
+    return render_template("register_profile.html", user=user)
