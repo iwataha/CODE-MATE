@@ -1,5 +1,5 @@
 /* ------------------------------
-   共通設定（body, header, footer）
+    共通設定（body, header, footer）
    ------------------------------ */
 body {
   margin: 0;
@@ -9,7 +9,11 @@ body {
 }
 
 header {
-  background-image: linear-gradient(90deg, rgba(87, 188, 222, 1), rgba(142, 84, 219, 1));
+  background-image: linear-gradient(
+    90deg,
+    rgba(87, 188, 222, 1),
+    rgba(142, 84, 219, 1)
+  );
   padding: 15px 20px;
   text-align: center;
 }
@@ -20,7 +24,11 @@ header img {
 }
 
 footer {
-  background-image: linear-gradient(90deg, rgba(87, 188, 222, 1), rgba(142, 84, 219, 1));
+  background-image: linear-gradient(
+    90deg,
+    rgba(87, 188, 222, 1),
+    rgba(142, 84, 219, 1)
+  );
   color: white;
   text-align: center;
   padding: 15px 10px;
@@ -39,7 +47,7 @@ footer {
 }
 
 /* ==============================
-   ▼ top.html 用CSS
+    ▼ top.html 用CSS
    ============================== */
 main {
   flex: 1;
@@ -91,7 +99,11 @@ main {
 }
 
 .login-box input[type="submit"]:hover {
-  background-image: linear-gradient(90deg, rgba(87, 188, 222, 1), rgba(142, 84, 219, 1));
+  background-image: linear-gradient(
+    90deg,
+    rgba(87, 188, 222, 1),
+    rgba(142, 84, 219, 1)
+  );
 }
 
 .login-box button:hover {
@@ -99,7 +111,7 @@ main {
 }
 
 /* ==============================
-   ▼ register_profile.html 用CSS
+    ▼ register_profile.html 用CSS
    ============================== */
 .form-box {
   background-color: white;
@@ -242,7 +254,7 @@ main {
 }
 
 /* ==============================
-   ▼ main.html 用CSS
+    ▼ main.html 用CSS
    ============================== */
 .filter-form {
   margin: 20px 0;
@@ -275,7 +287,7 @@ footer {
 }
 
 /* ==============================
-   ▼ user_profile.html 用CSS
+    ▼ user_profile.html 用CSS
    ============================== */
 .profile-card {
   position: relative;
@@ -315,7 +327,6 @@ footer {
   margin-bottom: 10px;
 }
 
-
 .close-bottom button {
   border: none;
   background-color: #4f46e5;
@@ -332,8 +343,6 @@ footer {
   background-color: #4338ca;
 }
 
-
-
 /*
 
 .close-bottom button {
@@ -349,8 +358,6 @@ footer {
   color: #555;
 }
  */
-
-
 
 @media (max-width: 576px) {
   .card-body h4 {
@@ -370,7 +377,6 @@ footer {
   }
 }
 
-
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -382,9 +388,8 @@ footer {
   object-fit: cover;
 }
 
-
 /* ==============================
-  ▼ my_profile.html 用CSS
+    ▼ my_profile.html 用CSS
    ============================== */
 
 /* プロフィール表示用コンテナ */
@@ -560,7 +565,6 @@ h2 {
   }
 }
 
-
 /* ==============================
   ▼ chat.html 用チャットレイアウト修正
    ============================== */
@@ -618,7 +622,6 @@ h2 {
   /* heightは指定しないことで自動調整 */
 }
 
-
 /*確認する/*
 /*
 
@@ -636,7 +639,6 @@ body {
 
 
 */
-
 
 /* メッセージリスト */
 .message-list {
@@ -760,7 +762,7 @@ body {
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-} 
+}
 
 .form-label {
   display: block;

@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 from app.models.user import User, db
 from werkzeug.security import (
     check_password_hash,
-)  # 7/24山本追加 パスワードハッシュ照合のため
+)
 import os
 
 # ログイン、ユーザー登録、ログアウトのルーティングを担当
@@ -24,7 +24,7 @@ def top():
             session["user_id"] = user.id
             return redirect("/main")
         else:
-            return render_template("auth/login_failed.html")  # ✅ 修正
+            return render_template("auth/login_failed.html")
     return render_template("auth/top.html")
 
 
@@ -58,7 +58,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        # 画像アップロード 下記7/24からユーザ毎に画像保存できるようにするため
+        # 画像アップロード
         image = request.files.get("image")
         if image and image.filename != "":
             filename = secure_filename(image.filename)
@@ -81,7 +81,7 @@ def register():
             db.session.commit()
 
         session["user_id"] = user.id
-        return redirect("/main")  # 7/24 山本変更
+        return redirect("/main")
 
     return render_template("auth/register_profile.html")
 

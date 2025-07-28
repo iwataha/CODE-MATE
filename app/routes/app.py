@@ -25,13 +25,13 @@ def create_app():
 
     Migrate(app, db)
     
-    # ✅ DBファイルとフォルダの自動作成
+    # DBファイルとフォルダの自動作成
     db_path = app.config["SQLALCHEMY_DATABASE_URI"].replace("sqlite:///", "")
     db_dir = os.path.dirname(db_path)
     if not os.path.exists(db_dir):
         os.makedirs(db_dir, exist_ok=True)
 
-    # ✅ DBがなければテーブルを作成
+    # DBがなければテーブルを作成
     if not os.path.exists(db_path):
         with app.app_context():
             db.create_all()
@@ -91,7 +91,7 @@ def create_app():
     def contact():
         return render_template("main/contact.html")
 
-        # ✅ ユーザー一覧
+        # ユーザー一覧
     @app.route("/users")
     def users():
         if "user_id" not in session:

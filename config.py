@@ -5,6 +5,7 @@ import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), "static", "uploads")
 
 class Config:
     SECRET_KEY = "secretkey123"  # セッション暗号化用のキー
