@@ -37,8 +37,7 @@ def create_app():
             db.create_all()
             print("✅ Database and tables created successfully.")
 
-    with app.app_context():
-        db.create_all()
+    
 
     # Blueprint登録
     app.register_blueprint(auth_bp)
