@@ -46,20 +46,13 @@ def edit_profile():
             user.image_path = f"uploads/{user.id}/{filename}"
 
             # DBに相対パスを保存（staticからのパス）
-            user.image_path = f"uploads/{user.id}/{filename}"
+            # user.image_path = f"uploads/{user.id}/{filename}"
 
         # DBにコミット
         db.session.commit()
         return redirect("/main")  # 編集後は/mainへ
 
     # GET時：テンプレートにユーザー情報を渡す
+    print(f"DEBUG (GET): user.image_path before rendering: {user.image_path}")
     return render_template("profile/my_profile.html", user=user)
 
-# マイページ表示処理
-@profile_bp.route("/my_profile", methods=["GET"])
-def my_profile():
-    if "user_id" not in session:
-        return redirect("/my_profile")
-
-    user = User.query.get(session["user_id"])
-    return render_template("profile/my_profile.html", user=user)
