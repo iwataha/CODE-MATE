@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 from app.models.user import User, db
 
 # Blueprint定義は最初に
-profile_bp = Blueprint("profile", __name__)
+profile_bp = Blueprint("profile", __name__, template_folder="../../templates")
 
 # マイページ表示 & 編集（同じURLでGETとPOSTを処理）
 @profile_bp.route("/my_profile", methods=["GET", "POST"])

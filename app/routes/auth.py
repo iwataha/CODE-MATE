@@ -10,7 +10,7 @@ import os
 # ログイン、ユーザー登録、ログアウトのルーティングを担当
 # user.pyのUserモデルとdbを利用
 
-auth_bp = Blueprint("auth", __name__)
+auth_bp = Blueprint("auth", __name__, template_folder="../../templates")
 
 
 @auth_bp.route("/", methods=["GET", "POST"])

@@ -28,7 +28,7 @@
 
             <!-- 画像 -->
             <img
-              src="{{ user.image or 'https://via.placeholder.com/600x300' }}"
+              src="{{ url_for('static', filename=user.image_path) if user.image_path else 'https://via.placeholder.com/600x300' }}"
               class="card-img-top"
               alt="{{ user.name }}"
             />

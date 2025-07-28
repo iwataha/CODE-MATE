@@ -1,7 +1,7 @@
 from flask import Blueprint, session, jsonify
 from app.models.user import User
 
-recommend_bp = Blueprint("recommend", __name__)
+recommend_bp = Blueprint("recommend", __name__, template_folder="../../templates")
 
 
 @recommend_bp.route("/api/recommend")

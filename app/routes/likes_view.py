@@ -4,7 +4,7 @@ from app.models.likes import Likes
 from app.models import db
 
 # likes_view_bpは、いいねの送信と受信を表示するためのBlueprint
-likes_view_bp = Blueprint('likes_view', __name__)
+likes_view_bp = Blueprint('likes_view', __name__, template_folder='../../templates')
 
 # いいねを送信したユーザーの一覧を取得
 @likes_view_bp.route('/likes/sent')

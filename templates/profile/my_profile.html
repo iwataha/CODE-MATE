@@ -24,11 +24,11 @@
         <div class="profile-pic-preview">
           <!-- デフォルトアイコン -->
           <i id="defaultIcon"
-            class="fas fa-user profile-icon {% if user.image %}is-hidden{% endif %}">
+            class="fas fa-user profile-icon {% if user.image_path %}is-hidden{% endif %}">
           </i>
           <!-- ユーザー画像 -->
           <img id="preview"
-          src="{{ url_for('static', filename=user.image) if user.image else '' }}"
+          src="{{ url_for('static', filename=user.image_path) if user.image_path else '' }}"
           alt="プロフィール画像"
           class="{{ 'if user.image else 'is-hidden' }}">
           <!-- カメラアイコン -->
