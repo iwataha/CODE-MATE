@@ -1,8 +1,8 @@
-# 概要
+# CODE MATE
 
 ![CODEMATE Logo](app/static/img/logo.png)
 
-## 保存対象
+## 概要
 
 - **完成済み**：動作確認済み、またはレビュー済みのコード
 - **準完成状態**：他ファイルとの連携状況は未確定だが、  
@@ -34,4 +34,5 @@ src_v0.1/
 ├── config.py             ← 設定ファイル
 ├── run.py                ← アプリ起動
 ├── README.md
+
 
