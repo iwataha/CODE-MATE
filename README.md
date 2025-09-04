@@ -1,5 +1,7 @@
 # 概要
 
+![CODEMATE Logo](app/static/img/logo.png)
+
 ## 保存対象
 
 - **完成済み**：動作確認済み、またはレビュー済みのコード
@@ -32,3 +34,4 @@ src_v0.1/
 ├── config.py             ← 設定ファイル
 ├── run.py                ← アプリ起動
 ├── README.md
+
