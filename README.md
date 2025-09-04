@@ -9,7 +9,7 @@
 ## 機能要件
 
 
-<img width="1112" height="622" alt="画面遷移図 モノトーン" src="https://github.com/user-attachments/assets/94b65cf0-9cb2-4063-b0a3-3d2f0baae3fe" />
+<img width="1112" height="622" alt="画面遷移図" src="https://github.com/user-attachments/assets/94b65cf0-9cb2-4063-b0a3-3d2f0baae3fe" />
 
 
 
@@ -58,6 +58,7 @@
 ## ディレクトリ構成
 
 <img width="566" height="533" alt="ディレクトリ構成" src="https://github.com/user-attachments/assets/0b6ba3d3-9a42-4d17-b0bc-d17a5524fd27" />
+
 
 
 
