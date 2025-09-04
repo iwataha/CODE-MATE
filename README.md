@@ -1,9 +1,3 @@
-# CODE MATE
-
-<img width="300" height="75" alt="logo_blue" src="https://github.com/user-attachments/assets/2bb00e19-a928-416d-b339-e79479ab517a" />
-
-
-
 ## 概要
 
 
@@ -64,6 +58,7 @@
 ## ディレクトリ構成
 
 <img width="566" height="533" alt="ディレクトリ構成" src="https://github.com/user-attachments/assets/0b6ba3d3-9a42-4d17-b0bc-d17a5524fd27" />
+
 
 
 
