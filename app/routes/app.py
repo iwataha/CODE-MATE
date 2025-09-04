@@ -11,6 +11,7 @@ from app.routes.likes_view import likes_view_bp
 from app.models.likes import Likes
 from flask_migrate import Migrate
 from app.routes.profile_search import profile_search_bp #検索機能追加7/26
+from sqlalchemy.sql import func #ランダムでおすすめユーザーを生成7/30
 
 
 def create_app():
@@ -80,6 +81,7 @@ def create_app():
                     ~User.id.in_(matched_users_subquery),
                     ~User.id.in_(liked_users_subquery) 
                 )
+            .order_by(func.random())
             .limit(6)
             .all()
         )
@@ -89,13 +91,10 @@ def create_app():
     @app.route("/contact",methods=['GET', 'POST'])
     def contact():
         return render_template("main/contact.html")
-
-        # ユーザー一覧
-    @app.route("/users")
-    def users():
-        if "user_id" not in session:
-            return redirect("main.top")
-        all_users = User.query.all()
-        return render_template("users.html", users=all_users)
+        
+    # 利用規約への遷移
+    @app.route('/attention')
+    def show_attention():
+        return render_template('main/attention.html')
 
     return app

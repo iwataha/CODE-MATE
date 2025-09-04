@@ -35,8 +35,13 @@
           <div class="profile-image-wrapper">
             <label for="profilePic" class="profile-label">
               <div class="profile-pic-preview">
-                <i id="defaultIcon" class="fas fa-user fa-3x profile-icon"></i>
-                <img id="preview" alt="プロフィール画像" />
+      <!-- 最初からデフォルト画像を表示 -->
+      <img
+        id="preview"
+        src="{{ url_for('static', filename='img/default.png') }}"
+        alt="プロフィール画像"
+      />
+      <!-- カメラアイコン -->
                 <i class="fas fa-camera camera-icon"></i>
               </div>
             </label>
@@ -76,11 +81,11 @@
 
           <select name="language" required>
             <option value="">使用言語を選択</option>
-            <option value="python">Python</option>
-            <option value="java">Java</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
             <option value="PHP">PHP</option>
-            <option value="ruby">Ruby</option>
-            <option value="csharp">C#</option>
+            <option value="Ruby">Ruby</option>
+            <option value="C#">C#</option>
           </select>
 
           <select name="dev_field" required>

@@ -20,7 +20,7 @@
           <div class="card profile-card bg-white">
             <!-- 星のお気に入りボタン -->
             <span
-              class="favorite-btn"
+    class="favorite-btn {% if liked %}active{% endif %}" 
               id="favoriteBtn"
               onclick="toggleFavorite()"
               >★</span
@@ -28,9 +28,9 @@
 
             <!-- 画像 -->
             <img
-              src="{{ url_for('static', filename=user.image_path) if user.image_path else 'https://via.placeholder.com/600x300' }}"
-              class="card-img-top"
+              src="{{ url_for('static', filename=user.image_path if user.image_path.startswith('uploads/') else 'img/default.png') }}"
               alt="{{ user.name }}"
+              class="profile-img-circle"
             />
 
             <!-- プロフィール情報 -->
@@ -45,20 +45,20 @@
                   <strong>言語:</strong> {{ user.language }}
                 </li>
                 <li class="list-group-item">
-                  <strong>開発分野:</strong> {{ user.field }}
+                  <strong>開発分野:</strong> {{ user.dev_field }}
                 </li>
                 <li class="list-group-item">
                   <strong>学習歴:</strong> {{ user.experience or '非公開' }}
                 </li>
                 <li class="list-group-item">
-                  <strong>自己紹介:</strong><br />{{ user.description or
+                  <strong>自己紹介:</strong><br />{{ user.introduction or
                   'まだ自己紹介がありません。' }}
                 </li>
               </ul>
 
               <!-- ▼ 閉じるボタンをカードの下中央に -->
               <div class="close-bottom">
-                <button onclick="window.history.back()">× 閉じる</button>
+                <button onclick="window.location.replace(document.referrer)">× 閉じる</button>
               </div>
             </div>
           </div>
@@ -82,6 +82,7 @@
     <!-- JSのtoggleFavorite()内で、相手ユーザーのID（user.id）を使ってPOSTリクエストを送ります -->
     <!--  {{ user.id }} がテンプレートで正しく渡っていることが前提 -->
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
     <script>
       function toggleFavorite() {
         const btn = document.getElementById("favoriteBtn");
@@ -103,6 +104,10 @@
           })
           .then((data) => {
             console.log("通知が送信されました:", data.message);
+            if (data.matched) {
+              const modal = new bootstrap.Modal(document.getElementById('matchModal'));
+              modal.show();
+            }
           })
           .catch((error) => {
             console.error("通知送信エラー:", error);
@@ -111,5 +116,16 @@
     </script>
 
     <!-- JSのtoggleFavorite()内で、相手ユーザーのID（user.id）を使ってPOSTリクエストを送ります -->
+    <div class="modal fade" id="matchModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-body">
+        <h5>🎉 マッチしました！</h5>
+        <p>メッセージを送ってみましょう！</p>
+        <button class="btn btn-primary" data-bs-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>

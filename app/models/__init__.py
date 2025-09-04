@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 
+# モデルを一元管理するファイル
 db = SQLAlchemy()
 
 from .user import User
